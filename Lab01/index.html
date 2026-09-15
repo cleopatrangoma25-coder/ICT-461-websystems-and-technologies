@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICT461 Course Registration</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <h1>ICT461 Course Registration</h1>
+    <p class="tagline">Web Systems and Technology — Unit 1 lab</p>
+  </header>
+
+  <main id="main-content">
+    <section aria-labelledby="reg-heading" class="card">
+      <h2 id="reg-heading">Register for a course</h2>
+      <p class="hint">All fields are required. Choose a programme first — the course list updates to match it.</p>
+
+      <form id="registrationForm" novalidate>
+
+        <div class="field">
+          <label for="fullName">Full name</label>
+          <input
+            type="text"
+            id="fullName"
+            name="fullName"
+            autocomplete="name"
+            required
+            aria-describedby="fullNameError">
+          <span class="error" id="fullNameError" role="alert"></span>
+        </div>
+
+        <div class="field">
+          <label for="studentId">Student ID</label>
+          <input
+            type="text"
+            id="studentId"
+            name="studentId"
+            inputmode="numeric"
+            pattern="[0-9]{9}"
+            placeholder="e.g. 202301392"
+            required
+            aria-describedby="studentIdHelp studentIdError">
+          <span class="help" id="studentIdHelp">9 digits, no spaces.</span>
+          <span class="error" id="studentIdError" role="alert"></span>
+        </div>
+
+        <div class="field">
+          <label for="programme">Programme</label>
+          <select id="programme" name="programme" required aria-describedby="programmeError">
+            <option value="">Select a programme</option>
+            <option value="cs">BSc Computer Science</option>
+            <option value="is">BSc Information Systems</option>
+            <option value="se">BSc Software Engineering</option>
+          </select>
+          <span class="error" id="programmeError" role="alert"></span>
+        </div>
+
+        <div class="field">
+          <label for="course">Course</label>
+          <select id="course" name="course" required aria-describedby="courseError" disabled>
+            <option value="">Select a programme first</option>
+          </select>
+          <span class="error" id="courseError" role="alert"></span>
+        </div>
+
+        <div class="field checkbox-field">
+          <input type="checkbox" id="declaration" name="declaration" required aria-describedby="declarationError">
+          <label for="declaration">I confirm these details are correct</label>
+          <span class="error" id="declarationError" role="alert"></span>
+        </div>
+
+        <button type="submit" class="submit-btn">Register</button>
+
+        <p id="formMessage" class="form-message" role="alert" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>ICT461 Web Systems and Technology | Unit 1 lab evidence build</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

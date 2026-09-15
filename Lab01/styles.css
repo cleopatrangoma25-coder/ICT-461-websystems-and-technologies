@@ -1,0 +1,165 @@
+:root {
+  --color-bg: #f4f6fb;
+  --color-card: #ffffff;
+  --color-text: #1a1d29;
+  --color-primary: #1d4ed8;
+  --color-primary-dark: #1731a3;
+  --color-error: #b91c1c;
+  --color-border: #d1d5db;
+  --radius: 8px;
+  --spacing: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+.site-header {
+  background: var(--color-primary);
+  color: #fff;
+  padding: 1.5rem var(--spacing);
+  text-align: center;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.tagline {
+  margin: 0.25rem 0 0;
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  padding: var(--spacing);
+}
+
+.card {
+  background: var(--color-card);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 480px;
+}
+
+.hint {
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.field {
+  margin-bottom: 1.1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox-field {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.checkbox-field label {
+  margin: 0;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  font-size: 0.95rem;
+}
+
+input[type="text"],
+select {
+  padding: 0.6rem 0.7rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  width: 100%;
+}
+
+input:focus,
+select:focus,
+button:focus {
+  outline: 3px solid #93c5fd;
+  outline-offset: 1px;
+}
+
+.help {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+.error {
+  font-size: 0.85rem;
+  color: var(--color-error);
+  min-height: 1.1em;
+  margin-top: 0.25rem;
+}
+
+.submit-btn {
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+}
+
+.submit-btn:hover,
+.submit-btn:focus {
+  background: var(--color-primary-dark);
+}
+
+.form-message {
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.form-message.success {
+  color: #15803d;
+}
+
+.form-message.error {
+  color: var(--color-error);
+}
+
+.site-footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #6b7280;
+  padding: 1.5rem var(--spacing);
+}
+
+/* Responsive: from tablet width up, give the card more breathing room
+   and switch the checkbox row back to a comfortable inline layout. */
+@media (min-width: 768px) {
+  main {
+    padding: 2.5rem var(--spacing);
+  }
+
+  .card {
+    padding: 2rem 2.5rem;
+  }
+
+  .site-header h1 {
+    font-size: 1.9rem;
+  }
+}
